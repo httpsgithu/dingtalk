@@ -15,7 +15,11 @@ publish:
   owner: nashaofu
   repo: dingtalk
 mac:
-  target: dmg
+  target:
+    - target: dmg
+      arch:
+        - x64
+        - arm64
   icon: './resources/icons/icon.icns'
   category: public.app-category.instant-messaging
 win:
@@ -46,6 +50,7 @@ linux:
         - arm64
         - armv7l
   executableName: dingtalk
+  desktop: 钉钉
   icon: './resources/icons'
   category: InstantMessaging;Network
 nsis:
@@ -54,3 +59,13 @@ nsis:
   allowToChangeInstallationDirectory: true
   displayLanguageSelector: true
   language: 2052
+deb:
+  depends:
+    - libc6
+    - libx11-6
+    - libxrandr2
+rpm:
+  depends:
+    - libc6
+    - libx11-6
+    - libxrandr2
